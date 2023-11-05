@@ -1,0 +1,38 @@
+{
+  "name": "vite-vue-template",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "staging": "vite build --mode staging",
+    "preview": "vite preview",
+    "showpad": "git commit . -m changes && npm version patch && npx experience-app-cli sync && npm run build && perl -pi -w -e 's/rgba?\\((\\s*\\d+)(\\s*\\s*\\d+)(\\s*\\s*\\d+) \\//rgba($1,$2,$3,/g' dist/assets/index.*.css && npx experience-app-cli bundle --dist dist"
+  },
+  "dependencies": {
+    "@showpad/experience-app-sdk": "^2.1.7",
+    "axios": "^0.27.2",
+    "gsap": "npm:@gsap/shockingly@^3.9.1",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@showpad/experience-app-cli": "^2.1.7",
+    "@vitejs/plugin-legacy": "^2.1.0",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.4.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-tailwindcss": "^3.6.1",
+    "eslint-plugin-vue": "^9.4.0",
+    "postcss": "^8.4.5",
+    "standard": "^17.0.0",
+    "tailwindcss": "^3.1.8",
+    "unplugin-vue-components": "^0.22.4",
+    "vite": "^3.1.0",
+    "vite-svg-loader": "^3.6.0"
+  }
+}
