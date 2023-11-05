@@ -2,8 +2,6 @@ import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
-import svgLoader from 'vite-svg-loader'
-import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {
@@ -20,11 +18,7 @@ export default ({ mode }) => {
         dirs: ['src'],
         deep: true,
         dts: false
-      }),
-      svgLoader({
-        svgo: false
-      }),
-      legacy()
+      })
     ]
   })
 }

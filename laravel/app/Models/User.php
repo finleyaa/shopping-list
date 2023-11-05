@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'spend_limit',
     ];
 
     /**
@@ -42,4 +43,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Get the items for the user.
+     */
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }

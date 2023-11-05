@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import auth from '@/store/modules/auth'
+import items from '@/store/modules/items'
 
 const store = createStore({
   state () {
@@ -12,6 +14,8 @@ const store = createStore({
   actions: {
   },
   modules: {
+    auth,
+    items
   }
 })
 

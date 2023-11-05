@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
@@ -5,3 +6,5 @@ import router from './router/index'
 import store from './store/index'
 
 createApp(App).use(router).use(store).mount('#app')
+
+axios.defaults.baseURL = import.meta.env.VITE_API_URL

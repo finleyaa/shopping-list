@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('/items', ItemController::class)
+    ->middleware('auth:sanctum');
+
+/* Auth */
+Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])
+    ->middleware('auth:sanctum');
+Route::get('/user', [App\Http\Controllers\AuthController::class, 'user'])
+    ->middleware('auth:sanctum');
+Route::patch('/user', [App\Http\Controllers\AuthController::class, 'update'])
+    ->middleware('auth:sanctum');
