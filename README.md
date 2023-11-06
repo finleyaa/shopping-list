@@ -21,3 +21,7 @@ This project contains Laravel and Vue. Follow the instructions below to run the 
 1. Navigate to the `laravel` folder and run `php artisan serve`
 2. In a separate terminal, navigate to the `vue` folder and run `npm run dev` or `yarn dev`
 3. Open your browser and go to `http://localhost:5173`
+
+## Testing
+
+1. Navigate to the `laravel` folder and run `php artisan test`
