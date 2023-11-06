@@ -8,11 +8,13 @@
         v-model="login.email"
         placeholder="Email"
         type="email"
+        required
       />
       <BaseInput
         v-model="login.password"
         placeholder="Password"
         type="password"
+        required
       />
       <p
         v-if="loginError"
@@ -26,16 +28,19 @@
         v-model="register.email"
         placeholder="Email"
         type="email"
+        required
       />
       <BaseInput
         v-model="register.password"
         placeholder="Password"
         type="password"
+        required
       />
       <BaseInput
         v-model="register.password_confirmation"
         placeholder="Confirm Password"
         type="password"
+        required
       />
       <p
         v-if="registerError"
@@ -102,6 +107,7 @@ export default {
           await this.$store.dispatch('auth/login', this.register)
         } catch (error) {
           this.registerError = error.response?.data?.message ?? error.message
+          return
         }
       } else {
         try {
@@ -109,6 +115,7 @@ export default {
           await this.$store.dispatch('auth/login', this.login)
         } catch (error) {
           this.loginError = error.response?.data?.message ?? error.message
+          return
         }
       }
       // if successful, redirect to the list
